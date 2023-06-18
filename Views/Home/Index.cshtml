@@ -2,7 +2,26 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="girls-page">
+@model List<Participant>
+
+<!-- ... -->
+@foreach (var participant in Model)
+{
+    <div>
+        <h4>@participant.Id</h4>
+        <p>Rating: @participant.Rating</p>
+        @if (participant.ProfileImage != null && participant.ProfileImage.Length > 0)
+        {
+            <img src="data:image/png;base64,@Convert.ToBase64String(participant.ProfileImage)" />
+        }
+        <hr />
+    </div>
+}
+
+
+
+
+@*<div class="girls-page">
 
     <div class="participant-section">
 
@@ -28,4 +47,4 @@
     </div>
 
 </div>
-
+*@

@@ -1,9 +1,7 @@
-﻿//using FindTheFifth.Fabriques;
-//using FindTheFifth.Models;
-using EstalBook.Models;
+﻿using EstalBook.Models;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace FindTheFifth.Services
+namespace EstalBook.Services
 {
     public class CacheService
     {
@@ -16,18 +14,14 @@ namespace FindTheFifth.Services
             _cache = cache;
         }
 
-        public void SetInParticipants(ParticipantModel participant)
+        public void PutInParticipants(List<Participant> participants)
         {
-            List<ParticipantModel> participants = GetParticipants();
-
-            participants.Add(participant);
-
             _cache.Set(_participantsKey, participants);
         }
 
-        public List<ParticipantModel> GetParticipants()
+        public List<Participant> GetParticipants()
         {
-            List<ParticipantModel> participants = new List<ParticipantModel>();
+            List<Participant> participants = new List<Participant>();
 
             _cache.TryGetValue(_participantsKey, out participants);
 

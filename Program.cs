@@ -1,10 +1,18 @@
-using FindTheFifth.Services;
+using EstalBook.Models;
+using EstalBook.Services;
+using Microsoft.EntityFrameworkCore;
+
+string nameOfDatabaseConnection = "DefaultConnection";
 
 var builder = WebApplication.CreateBuilder(args);
+
+string connection = builder.Configuration.GetConnectionString(nameOfDatabaseConnection);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<CacheService>();
+builder.Services.AddTransient<ParticipantService>();
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 
 var app = builder.Build();
 
