@@ -2,10 +2,11 @@ using EstalBook.Models;
 using EstalBook.Services;
 using Microsoft.EntityFrameworkCore;
 
-string nameOfDatabaseConnection = "DefaultConnection";
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+string nameOfDatabaseConnection = "DefaultConnection";
 string connection = builder.Configuration.GetConnectionString(nameOfDatabaseConnection);
 
 // Add services to the container.

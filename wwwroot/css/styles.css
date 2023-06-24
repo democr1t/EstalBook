@@ -54,11 +54,16 @@ body {
     width: 2000px;
 }
 
-img {
+/*img {
     align-self: center;
     height: 100%;
     width: auto;
-}
+}*/
 
+img {
+
+    height: 600px;
+    width: 400px;
+}
 
 

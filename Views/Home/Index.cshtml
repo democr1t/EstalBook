@@ -1,50 +1,45 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Participant>
 
-@model List<Participant>
+<h1>Participant List</h1>
 
-<!-- ... -->
-@foreach (var participant in Model)
-{
-    <div>
-        <h4>@participant.Id</h4>
-        <p>Rating: @participant.Rating</p>
-        @if (participant.ProfileImage != null && participant.ProfileImage.Length > 0)
+<p>
+    <a asp-action="Create">Create New Participant</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Rating</th>
+            <th>Profile Image</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var participant in Model)
         {
-            <img src="data:image/png;base64,@Convert.ToBase64String(participant.ProfileImage)" />
+            <tr>
+                <td>@participant.Id</td>
+                <td>@participant.Name</td>
+                <td>@participant.Age</td>
+                <td>@participant.Rating</td>
+                <td>
+                    @if (participant.ProfileImage != null)
+                    {
+                        <img src="~/participantImages/@participant.ProfileImage" />
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@participant.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@participant.Id">Delete</a>
+                </td>
+            </tr>
         }
-        <hr />
-    </div>
-}
+    </tbody>
+</table>
 
 
 
 
-@*<div class="girls-page">
-
-    <div class="participant-section">
-
-        <div class="participant-left">
-            <div class="participant-left-img">
-                <img src="participantImages/lceEiuvvGO0.jpg" alt="1">
-            </div>            
-        </div>
-
-        <div class="participant-right">
-            <div class="participant-right-img">
-                <img src="participantImages/VCcop8D6nlk.jpg" alt="2">
-            </div>
-        </div>
-
-    </div>
-
-    <div class="button-section">
-        <div>
-            <button>левая</button>
-            <button>правая</button>
-        </div>
-    </div>
-
-</div>
-*@
