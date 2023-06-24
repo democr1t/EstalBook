@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Participant>
+
+<h1>Participant List</h1>
+
+<p>
+    <a asp-action="Create">Create New Participant</a>
+</p>
+
+<table class="leader-table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Rating</th>
+            <th>Profile Image</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var participant in Model)
+        {
+            <tr>
+                <td>@participant.Id</td>
+                <td>@participant.Name</td>
+                <td>@participant.Age</td>
+                <td>@participant.Rating</td>
+                <td>
+                    @if (participant.ProfileImage != null)
+                    {
+                        <div class="customers-img">
+                            <img src="~/participantImages/@participant.ProfileImage" />
+                        </div>
+                        
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@participant.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@participant.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

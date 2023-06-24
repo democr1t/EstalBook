@@ -15,20 +15,43 @@
             <div class="container">
                 <ul class="choise__list">
                     <li class="choise__item">
+                        
                         <img src="~/participantImages/@participants[1].ProfileImage"
                              alt=""
                              class="choise__item-img left-1" />
-                        <div class="btn__container">
-                            <button type="button" class="choise__btn left-2"><</button>
+
+                        <div class="left-participant">
+                            <h1>@participants[1].Id , @participants[1].Name, @participants[1].Age, rating: @participants[1].Rating</h1>
                         </div>
+                      
+                        @*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[1].Id })">Vote for left</a>*@
+
+                        <form method="post" asp-action="IncreaseRating">
+                            <button type="submit" name="id" value="@participants[1].Id">Vote for left</button>
+                        </form>
+      @*                  <div class="btn__container">
+                            <button type="button" class="choise__btn left-2"><</button>
+                        </div>*@
                     </li>
+
                     <li class="choise__item">
+                      
                         <img src="~/participantImages/@participants[0].ProfileImage"
                              alt=""
                              class="choise__item-img right-1" />
-                        <div class="btn__container">
-                            <button type="button" class="choise__btn right-2">></button>
+
+                        <div class="right-participant">
+                            <h1>@participants[0].Id , @participants[0].Name, @participants[0].Age, rating: @participants[0].Rating</h1>
                         </div>
+
+                        <form method="post" asp-action="IncreaseRating">
+                            <button type="submit" name="id" value="@participants[0].Id">Vote for right</button>
+                        </form>
+                        @*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[0].Id })">Vote for Right</a>*@
+
+                       @* <div class="btn__container">
+                            <button type="button" class="choise__btn right-2">></button>
+                        </div>*@
                     </li>
                 </ul>
             </div>
@@ -48,45 +71,7 @@
 
 
 
-@*<h1>Participant List</h1>
 
-<p>
-    <a asp-action="Create">Create New Participant</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Rating</th>
-            <th>Profile Image</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var participant in Model)
-        {
-            <tr>
-                <td>@participant.Id</td>
-                <td>@participant.Name</td>
-                <td>@participant.Age</td>
-                <td>@participant.Rating</td>
-                <td>
-                    @if (participant.ProfileImage != null)
-                    {
-                        <img src="~/participantImages/@participant.ProfileImage" />
-                    }
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@participant.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@participant.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>*@
 
 
 

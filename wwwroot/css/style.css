@@ -238,3 +238,23 @@ a {
   color: black;
   text-align: center;
 }
+
+.left-participant {
+    color: white;
+}
+
+
+.right-participant {
+    color: white;
+}
+
+/*.customers-img {
+    width: 261px;
+    height: 261px;
+    float: left;
+}*/
+
+img {
+    width: 480px;
+    height: 640px;
+}

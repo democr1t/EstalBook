@@ -6,6 +6,8 @@
         public int Rating { get; set; }
         //public byte[]? ProfileImage { get; set; }
 
+        public int Sex { get; set; }
+
         public string ProfileImage { get; set; }
         public string? Name { get; set; }
 
