@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\images\.DS_Store" />
+    <None Include="wwwroot\css\images\1.jpeg" />
+    <None Include="wwwroot\css\images\2.jpeg" />
+    <None Include="wwwroot\css\images\logo.jpeg" />
+    <None Include="wwwroot\css\images\logo.svg" />
+    <None Include="wwwroot\css\images\¦¦¦-¦-¦¦TА.jpg" />
+    <None Include="wwwroot\css\images\¦¦¦-¦-¦¦TА.png" />
+    <None Include="wwwroot\css\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.7" />
   </ItemGroup>
 
