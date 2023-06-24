@@ -1,6 +1,54 @@
 ﻿@model IEnumerable<Participant>
 
-<h1>Participant List</h1>
+@{
+    var participants = Model.ToArray();
+
+    //foreach (Participant participant in Model)
+    //{
+    //    @participants.Add(participant);
+    //}
+}
+
+<div class="wrapper">
+    <main class="main">
+        <section class="choise">
+            <div class="container">
+                <ul class="choise__list">
+                    <li class="choise__item">
+                        <img src="~/participantImages/@participants[1].ProfileImage"
+                             alt=""
+                             class="choise__item-img left-1" />
+                        <div class="btn__container">
+                            <button type="button" class="choise__btn left-2"><</button>
+                        </div>
+                    </li>
+                    <li class="choise__item">
+                        <img src="~/participantImages/@participants[0].ProfileImage"
+                             alt=""
+                             class="choise__item-img right-1" />
+                        <div class="btn__container">
+                            <button type="button" class="choise__btn right-2">></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h1>Participant List</h1>
 
 <p>
     <a asp-action="Create">Create New Participant</a>
@@ -38,7 +86,7 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@
 
 
 
