@@ -1,0 +1,260 @@
+/*  Общее  */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+html,
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  box-sizing: border-box;
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  /* width: 1170px;  */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* ========= HEADER ========== */
+.header {
+  background-color: #d8ae88;
+}
+.header__inner {
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.logo {
+  width: 73px;
+  height: 73px;
+  margin-right: 24px;
+}
+.logo__img {
+}
+.title {
+  color: white;
+  padding-right: 435px;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 77px;
+}
+.title-color {
+  color: black;
+}
+.menu__list {
+  display: flex;
+  gap: 60px;
+  margin-right: 50px;
+}
+.menu__list-link,
+.btn-rang {
+  color: black;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.menu__list-link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  left: 0;
+  bottom: -3px;
+  transition: 0.5s;
+  transform: scale(0);
+}
+.menu__list-link:hover:before {
+  transform: scale(1);
+}
+.header__btn-container {
+  padding-right: 15px;
+}
+.glow-on-hover {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 0;
+  outline: none;
+  background: #c58956;
+  cursor: pointer;
+}
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #f3a683,
+    #c58956,
+    #f19066,
+    #d8ae88,
+    #c58956,
+    #d8ae88,
+    #c58956,
+    #d8ae88
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: black;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* ========= MAIN ========== */
+.main {
+  flex-grow: 1;
+  height: 780px;
+}
+.choise {
+  text-align: center;
+  background-image: url("images/carpet.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center center;
+  background-color: #d8ae88;
+}
+.title-main {
+  padding: 30px 0 30px 0;
+  color: white;
+}
+.choise__list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.choise__item-img {
+  width: 280px;
+  height: 382px;
+  border: 3px solid #d8ae88;
+  border-radius: 5px;
+  margin-top: 212px;
+}
+.left-1 {
+  margin-left: 290px;
+}
+.right-1 {
+  margin-right: 290px;
+}
+.btn__container {
+  padding-top: 15px;
+}
+.choise__btn {
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+  width: 40px;
+  height: 40px;
+  background-color: #d8ae88;
+  border: 1px solid black;
+  border-radius: 10px;
+  /* cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0, 2s ease;  */
+}
+.left-2 {
+  margin-left: 529px;
+}
+.right-2 {
+  margin-right: 529px;
+}
+
+/* ========= FOOTER ========== */
+.footer {
+  background-color: #d8ae88;
+  padding: 50px 0 30px;
+  color: black;
+  text-align: center;
+}
+
+.left-participant {
+    color: white;
+}
+
+
+.right-participant {
+    color: white;
+}
+
+/*.customers-img {
+    width: 261px;
+    height: 261px;
+    float: left;
+}*/
+
+img {
+    width: 480px;
+    height: 640px;
+}

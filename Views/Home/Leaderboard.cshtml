@@ -1,4 +1,85 @@
-﻿@model IEnumerable<Participant>
+﻿@*@model IEnumerable<Participant>*@
+@model Tuple<List<Participant>, List<Participant>>
+
+<main class="main-2">
+
+    <section class="rating">
+
+        <div class="container-left girls">
+
+            <h2 class="title__rating">Девушки</h2>
+
+            <ul class="rating__list">
+                @foreach (var participant in Model.Item1)
+                {
+                    <li class="rating__item">@participant.Name,  @participant.Age</li>
+                    <img class="rating__img" src="~/participantImages/@participant.ProfileImage" />
+                }
+
+            </ul>
+        </div>
+
+        <div class="container-right mans">
+
+            <h2 class="title__rating">Парни</h2>
+
+            <ul class="rating__list">
+                @foreach (var participant in Model.Item2)
+                {
+                    <li class="rating__item">@participant.Name,  @participant.Age</li>
+                    <img class="rating__img" src="~/participantImages/@participant.ProfileImage" />
+                }
+            </ul>
+
+        </div>
+    </section>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model IEnumerable<Participant>
 
 <h1>Participant List</h1>
 
@@ -41,4 +122,4 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@

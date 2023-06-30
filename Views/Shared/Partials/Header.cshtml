@@ -1,22 +1,22 @@
 ﻿    <div class="container">
         <div class="header__inner">
             <a href="#" class="logo">
-                <img src="images/logo.svg" alt="" class="logo__img" />
+                <img src="~/css/images/logo.svg" class="logo__img" />
             </a>
             <h1 class="title"><span class="title-color">Сталь</span>book</h1>
 
             <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__list-item">
-                        <a href="girls.html" class="menu__list-link">Девушки</a>
+                    <a asp-action="Index">Девушки</a>
                     </li>
                     <li class="menu__list-item">
-                        <a href="mans.html" class="menu__list-link">Парни</a>
+                    <a asp-action="Boys">Парни</a>
                     </li>
                 </ul>
             </nav>
             <div class="header__btn-container">
-            <a asp-action="Leaderboard">Рейтинг</a>
+            <a asp-action="Leaderboard" class="glow-on-hover">Рейтинг</a>
                @* <button type="button"
                         onclick="location.href="https://vk.com/video/@wudiochan?z=video-116181796_456322615%2Fclub116181796%2Fpl_-116181796_-2"
                         class="glow-on-hover">

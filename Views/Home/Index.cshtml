@@ -3,10 +3,6 @@
 @{
     var participants = Model.ToArray();
 
-    //foreach (Participant participant in Model)
-    //{
-    //    @participants.Add(participant);
-    //}
 }
 
 <div class="wrapper">
@@ -16,22 +12,17 @@
                 <ul class="choise__list">
                     <li class="choise__item">
                         
+                        
                         <img src="~/participantImages/@participants[1].ProfileImage"
                              alt=""
                              class="choise__item-img left-1" />
 
-                        <div class="left-participant">
-                            <h1>@participants[1].Id , @participants[1].Name, @participants[1].Age, rating: @participants[1].Rating</h1>
-                        </div>
-                      
-                        @*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[1].Id })">Vote for left</a>*@
-
+                        <div class="btn__container">
                         <form method="post" asp-action="IncreaseRating">
-                            <button type="submit" name="id" value="@participants[1].Id">Vote for left</button>
+                            <button class="btn btn-white btn-animate" type="submit" name="id" value="@participants[1].Id">@participants[1].Name, @participants[1].Age</button>
                         </form>
-      @*                  <div class="btn__container">
-                            <button type="button" class="choise__btn left-2"><</button>
-                        </div>*@
+                        </div>
+ 
                     </li>
 
                     <li class="choise__item">
@@ -39,21 +30,22 @@
                         <img src="~/participantImages/@participants[0].ProfileImage"
                              alt=""
                              class="choise__item-img right-1" />
-
-                        <div class="right-participant">
-                            <h1>@participants[0].Id , @participants[0].Name, @participants[0].Age, rating: @participants[0].Rating</h1>
-                        </div>
-
+                        <div class="btn__container">
                         <form method="post" asp-action="IncreaseRating">
-                            <button type="submit" name="id" value="@participants[0].Id">Vote for right</button>
+                            <button class="btn btn-white btn-animate" type="submit" name="id" value="@participants[0].Id">@participants[0].Name, @participants[0].Age</button>
                         </form>
-                        @*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[0].Id })">Vote for Right</a>*@
-
-                       @* <div class="btn__container">
-                            <button type="button" class="choise__btn right-2">></button>
-                        </div>*@
+                     </div
                     </li>
                 </ul>
+               @* <div class="btn__container">
+                    <form method="post" asp-action="IncreaseRating">
+                        <button class="btn btn-white btn-animate" type="submit" name="id" value="@participants[1].Id">@participants[1].Name, @participants[1].Age</button>
+                    </form>
+
+                    <form method="post" asp-action="IncreaseRating">
+                        <button class="btn btn-white btn-animate" type="submit" name="id" value="@participants[0].Id">@participants[0].Name, @participants[0].Age</button>
+                    </form>
+                </div>*@
             </div>
         </section>
     </main>
@@ -61,13 +53,29 @@
 
 
 
+@*<div class="left-participant">
+                            <h1>@participants[1].Id , @participants[1].Name, @participants[1].Age, rating: @participants[1].Rating</h1>
+                        </div>*@
+
+@*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[1].Id })">Vote for left</a>*@
 
 
 
 
+@*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[0].Id })">Vote for Right</a>*@
+
+@* <div class="btn__container">
+                            <button type="button" class="choise__btn right-2">></button>
+                        </div>*@
+
+@* <div class="right-participant">
+                            <h1>@participants[0].Id , @participants[0].Name, @participants[0].Age, rating: @participants[0].Rating</h1>
+                        </div>*@
 
 
-
+@*                  <div class="btn__container">
+                            <button type="button" class="choise__btn left-2"><</button>
+                        </div>*@
 
 
 

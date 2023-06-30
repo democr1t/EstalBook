@@ -27,14 +27,26 @@ namespace EstalBook.Controllers
             //return View(await _context.Participants.ToListAsync());
         }
 
+        public async Task<IActionResult> Boys()
+        {
+            return View("Index", await _participantService.GetRandomPairAsync(1));
+            //return View(await _context.Participants.ToListAsync());
+        }
+
         public async Task<IActionResult> Leaderboard()
         {
-            var participants = _context.Participants
+            var participantsGirls = _context.Participants.Where(p => p.Sex == 1)
             .OrderByDescending(p => p.Rating)
             .ToList();
 
+            var participantsBoys = _context.Participants.Where(p => p.Sex == 2)
+            .OrderByDescending(p => p.Rating)
+            .ToList();
+
+            var model = new Tuple<List<Participant>, List<Participant>>(participantsBoys, participantsGirls);
+
             // Pass the sorted list of participants to the view.
-            return View(participants);
+            return View(model);
         }
 
         public IActionResult Create()
@@ -65,7 +77,14 @@ namespace EstalBook.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction(nameof(Index));
+            if (participant.Sex == 1)
+            {
+                return RedirectToAction(nameof(Boys));
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index));
+            }
         }
 
             [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

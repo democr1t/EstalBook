@@ -22,9 +22,10 @@
     <None Include="wwwroot\css\images\2.jpeg" />
     <None Include="wwwroot\css\images\logo.jpeg" />
     <None Include="wwwroot\css\images\logo.svg" />
+    <None Include="wwwroot\css\style.css" />
     <None Include="wwwroot\css\images\¦¦¦-¦-¦¦TА.jpg" />
     <None Include="wwwroot\css\images\¦¦¦-¦-¦¦TА.png" />
-    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\style_old2.css" />
     <None Include="wwwroot\images\.DS_Store" />
     <None Include="wwwroot\images\1.jpeg" />
     <None Include="wwwroot\images\2.jpeg" />
@@ -36,6 +37,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TestThings\" />
   </ItemGroup>
 
 </Project>

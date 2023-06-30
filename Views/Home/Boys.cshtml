@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Participant>
+
+@{
+    var participants = Model.ToArray();
+
+}
+
+<div class="wrapper">
+    <main class="main">
+        <section class="choise">
+            <div class="container">
+                <ul class="choise__list">
+                    <li class="choise__item">
+
+                        <img src="~/participantImages/@participants[1].ProfileImage"
+                             alt=""
+                             class="choise__item-img left-1" />
+
+                        <div class="left-participant">
+                            <h1>@participants[1].Id , @participants[1].Name, @participants[1].Age, rating: @participants[1].Rating</h1>
+                        </div>
+
+                        <div class="btn__container">
+                            <form method="post" asp-action="IncreaseRating">
+                                <button class="btn btn-white btn-animate" type="submit" name="id" value="@participants[1].Id">@participants[1].Name, @participants[1].Age</button>
+                            </form>
+                        </div>
+
+
+                    </li>
+
+                    <li class="choise__item">
+
+                        <img src="~/participantImages/@participants[0].ProfileImage"
+                             alt=""
+                             class="choise__item-img right-1" />
+
+                        <div class="right-participant">
+                            <h1>@participants[0].Id , @participants[0].Name, @participants[0].Age, rating: @participants[0].Rating</h1>
+                        </div>
+
+                        <div class="btn__container">
+                        <form method="post" asp-action="IncreaseRating">
+                            <button class="btn btn-white btn-animate" type="submit" name="id" value="@participants[0].Id">@participants[0].Name, @participants[0].Age</button>
+                        </form>
+                     </div
+
+           
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+
+@*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[1].Id })">Vote for left</a>*@
+
+@* <form method="post" asp-action="IncreaseRating">
+                            <button type="submit" name="id" value="@participants[1].Id">Vote for left</button>
+                        </form>*@
+@*                  <div class="btn__container">
+                        <button type="button" class="choise__btn left-2"><</button>
+                        </div>*@
+
+
+
+
+                               @*      <form method="post" asp-action="IncreaseRating">
+                            <button type="submit" name="id" value="@participants[0].Id">Vote for right</button>
+                        </form>*@
+                        @*<a class="btn btn-primary" href="@Url.Action("IncreaseRating", "Home", new { id = participants[0].Id })">Vote for Right</a>*@
+
+                        @* <div class="btn__container">
+                        <button type="button" class="choise__btn right-2">></button>
+                        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
